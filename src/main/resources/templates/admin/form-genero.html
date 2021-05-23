@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formulario</title>
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+<link href="../../static/css/style.css" th:href="@{/css/style.css}"
+	rel="stylesheet" />
+
+
+</head>
+<body>
+			
+	<div class="container">
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8">
+				<form method="post" action="#"
+					th:action="@{/admin/genero/nuevo/submit}" th:object="${genero}">
+					<h1>
+						<span th:text="${genero.id} ? 'Editar' : 'Nuevo'"></span>
+						Genero
+					</h1>
+					<input type="hidden" th:field="*{id}" id="id" />
+					<div class="form-group">
+						<label for="nombre">Nombre</label> <input type="text"
+							class="form-control" id="nombre" placeholder="Nombre"
+							th:field="*{nombre}" />
+					</div>
+                    <div class="form-group">
+						<label for="apellidos">Apellidos</label> <input type="text"
+							class="form-control" id="apellidos" placeholder="Apellidos"
+							th:field="*{apellidos}" />
+					</div>
+                    <div class="form-group">
+						<label for="email">Email</label> <input type="text"
+							class="form-control" id="email" placeholder="example@example"
+							th:field="*{email}" />
+					</div>
+					<div class="form-group">
+						<label for="fecha">Fecha Nacimiento</label> <input type="date"
+							class="form-control" id="fecha" placeholder="fecha"
+							th:field="*{fecha}" />
+					</div>
+					
+					
+
+					<div class="form-group">
+						<label for="genero">Cartelera</label> <select
+							th:field="*{genero}" class="form-control">
+							<option value="-1">---</option>
+							<option th:each="genero : ${genero}"
+								th:value="${genero.id}" th:text="${categoria.nombre}">Genero</option>
+						</select>
+					</div>
+					<button type="submit" class="btn btn-default">Enviar</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+
+</body>
+</html>
