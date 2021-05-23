@@ -1,0 +1,44 @@
+.list-inline{
+	list-style: none;
+	display: block;
+	padding-left: 0%;
+}
+
+.footer-full-width .list-inline{
+	text-align: center;
+	text-transform: uppercase;
+}
+
+ul{
+	padding: 0%;
+	margin: 0%;
+	list-style-type: none;
+}
+
+.footer-full-width a, .footer-full-width a:focus, .footer-full-width a:active{
+	color: #fa6f6f;
+	text-decoration: none;
+}
+
+.footer-full-width a.active, .footer-full-width a:hover{
+	color: #be07f5;
+	text-decoration: none;
+}
+
+.footer-full-width{
+	background-color:rgb(168, 238, 37);
+}
+
+footer>div>div:last-child{
+	padding: 0% 20%;
+}
+
+header,footer{
+	background-image: url(./img/fondo.jpg);
+	color: white;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+
+
